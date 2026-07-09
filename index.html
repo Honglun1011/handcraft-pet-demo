@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handcraft Pet Custom Demo v0.2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand route-link" href="#home" aria-label="Handcraft Pet home">
+        <span class="brand-mark">匠</span>
+        <span><strong>Handcraft Pet</strong><small>手作宠物定制</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Toggle navigation">☰</button>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a class="route-link" href="#home">Home</a>
+        <a class="route-link" href="#gallery">Product Gallery</a>
+        <a class="route-link" href="#crafts">Craft Information</a>
+        <a class="route-link" href="#custom">Custom Pet Brief</a>
+        <a class="route-link" href="#stories">Stories</a>
+        <a class="route-link" href="#about">About</a>
+        <a class="route-link" href="#contact">Contact</a>
+        <a class="route-link" href="#faq">FAQ / Policy</a>
+      </nav>
+      <a class="nav-cta route-link" href="#custom">开始定制</a>
+    </header>
+
+    <main>
+      <section id="home" class="page active">
+        <div class="hero">
+          <img src="./assets/hero-handcraft-pet-v2.png" alt="中式手作风格的宠物定制纪念物桌面场景" />
+          <div class="hero-copy">
+            <p class="eyebrow">Traditional craft · Pet custom brief</p>
+            <h1>把猫狗的样子和故事，交给木、贝与瓷慢慢记住。</h1>
+            <p class="hero-lede">
+              一个策展型传统手工艺宠物定制 demo：先创建宠物画像，再选择物件与工艺，提交给品牌方询价。
+            </p>
+            <div class="button-row">
+              <a class="button primary route-link" href="#custom">Start Custom Brief</a>
+              <a class="button secondary route-link" href="#gallery">View Product Gallery</a>
+              <a class="button secondary route-link" href="#crafts">Explore Crafts</a>
+            </div>
+          </div>
+        </div>
+
+        <section class="section compact">
+          <div class="section-heading">
+            <p class="eyebrow">Demo Scope v0.2</p>
+            <h2>完整可点击流程，不做购物车和付款。</h2>
+          </div>
+          <div class="feature-strip">
+            <article><span>壹</span><strong>Product Gallery</strong><p>展示可以做成什么物件，而不是现货货架。</p></article>
+            <article><span>贰</span><strong>Craft Information</strong><p>解释木雕、螺钿、青花瓷的材料和适用对象。</p></article>
+            <article><span>叁</span><strong>Brief Wizard</strong><p>13 步宠物制作简报，宠物画像先于价格配置。</p></article>
+            <article><span>肆</span><strong>Admin Demo</strong><p>提交后可在后台查看本地演示记录。</p></article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Product Gallery Preview</p>
+              <h2>先回答用户最关心的：可以做成什么？</h2>
+            </div>
+            <a class="text-link route-link" href="#gallery">View all objects</a>
+          </div>
+          <div class="object-grid preview-grid"></div>
+        </section>
+
+        <section class="section porcelain-band">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Craft Information Preview</p>
+              <h2>三种工艺，三种纪念物的气质。</h2>
+            </div>
+            <a class="text-link route-link" href="#crafts">Explore craft pages</a>
+          </div>
+          <div class="craft-grid preview-crafts"></div>
+        </section>
+
+        <section class="section">
+          <div class="process-panel">
+            <div>
+              <p class="eyebrow">How It Works</p>
+              <h2>Brief → 匹配工艺/师傅 → 报价 → 制作 → 发货</h2>
+              <p>用户提交的不是普通表单，而是一份给手作团队和师傅看的 Custom Craft Brief。</p>
+            </div>
+            <a class="button primary route-link" href="#custom">Create My Pet Brief</a>
+          </div>
+        </section>
+      </section>
+
+      <section id="gallery" class="page">
+        <section class="section page-hero">
+          <p class="eyebrow">Product Gallery</p>
+          <h1>不是库存商城，是物件灵感目录。</h1>
+          <p>每张卡片展示适合工艺、使用场景和定制入口。用户可以先想象自己的宠物会变成什么。</p>
+        </section>
+        <section class="section tight">
+          <div class="filter-row" id="gallery-filters"></div>
+          <div class="object-grid" id="gallery-grid"></div>
+        </section>
+      </section>
+
+      <section id="crafts" class="page">
+        <section class="section page-hero">
+          <p class="eyebrow">Craft Information</p>
+          <h1>木雕温润，螺钿含光，青花瓷清雅。</h1>
+          <p>每个工艺页都说明可以做什么、材料怎么选、复杂度如何影响报价。</p>
+        </section>
+        <section class="section tight">
+          <div class="craft-grid" id="craft-overview"></div>
+          <div class="detail-panel" id="craft-detail"></div>
+        </section>
+      </section>
+
+      <section id="custom" class="page">
+        <section class="section page-hero custom-hero">
+          <p class="eyebrow">Pet Custom Craft Brief Wizard</p>
+          <h1>先认识它，再谈工艺和报价。</h1>
+          <p>v0.2 demo 按文档扩展为 13 步：猫狗完整向导，其他动物进入简化联系。</p>
+        </section>
+        <section class="section tight">
+          <div class="wizard-shell">
+            <aside class="wizard-sidebar">
+              <div class="progress-card">
+                <strong id="progress-number">1/13</strong>
+                <span id="progress-label">Pet Type</span>
+                <div class="progress-track"><i id="progress-bar"></i></div>
+              </div>
+              <ol id="step-list" class="step-list"></ol>
+            </aside>
+            <form id="brief-form" class="wizard-card">
+              <div class="wizard-topline">
+                <span id="step-eyebrow">Step 1</span>
+                <button class="ghost-button" type="button" id="save-draft">Save Draft</button>
+              </div>
+              <div id="step-panel"></div>
+              <div class="wizard-actions">
+                <button class="button secondary" type="button" id="prev-step">Back</button>
+                <button class="button primary" type="button" id="next-step">Continue</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </section>
+
+      <section id="stories" class="page">
+        <section class="section page-hero">
+          <p class="eyebrow">Stories / Product Cases</p>
+          <h1>案例、过程和前后对比，是信任的入口。</h1>
+        </section>
+        <section class="section tight">
+          <div class="story-grid" id="story-grid"></div>
+        </section>
+      </section>
+
+      <section id="about" class="page">
+        <section class="section text-page">
+          <p class="eyebrow">About Us</p>
+          <h1>我们策展的是工艺、故事和可被信任的定制过程。</h1>
+          <div class="copy-grid">
+            <article><h3>品牌使命</h3><p>把宠物的样子、习惯和情绪记忆，转化成一件有温度的手工艺物件。</p></article>
+            <article><h3>策展逻辑</h3><p>先筛选适合宠物题材的工艺方向，再用 Brief 降低沟通不确定性。</p></article>
+            <article><h3>品质把关</h3><p>制作前确认 Brief，制作中保留过程记录，发货前确认成品照片。</p></article>
+          </div>
+          <div class="button-row"><a class="button primary route-link" href="#custom">Start Custom Brief</a><a class="button secondary route-link" href="#crafts">Explore Crafts</a></div>
+        </section>
+      </section>
+
+      <section id="contact" class="page">
+        <section class="section text-page">
+          <p class="eyebrow">Contact Us</p>
+          <h1>有不确定的想法，也可以先问问。</h1>
+          <form class="contact-card" id="contact-form">
+            <label>Name<input placeholder="Your name" /></label>
+            <label>Email<input placeholder="name@example.com" /></label>
+            <label>Question Type<select><option>Custom question</option><option>Craft suggestion</option><option>Order policy</option></select></label>
+            <label class="full">Message<textarea placeholder="Tell us what you are imagining."></textarea></label>
+            <button class="button primary" type="button">Send Message</button>
+            <a class="button secondary route-link" href="#custom">Start Custom Brief Instead</a>
+          </form>
+        </section>
+      </section>
+
+      <section id="faq" class="page">
+        <section class="section text-page">
+          <p class="eyebrow">FAQ / Policy</p>
+          <h1>把手工差异、照片隐私和售后边界提前说清楚。</h1>
+          <div class="faq-list" id="faq-list"></div>
+          <div class="button-row"><a class="button primary route-link" href="#custom">Start Custom Brief</a><a class="button secondary route-link" href="#contact">Contact Us</a></div>
+        </section>
+      </section>
+
+      <section id="admin" class="page">
+        <section class="section page-hero admin-hero">
+          <p class="eyebrow">Admin Demo</p>
+          <h1>本地演示后台：查看提交的 Brief。</h1>
+          <p>无登录、无真实付款。提交记录保存在浏览器 localStorage，适合 demo 演示闭环。</p>
+        </section>
+        <section class="section tight">
+          <div class="admin-grid" id="admin-dashboard"></div>
+          <div class="admin-list" id="admin-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Handcraft Pet Demo v0.2</strong>
+      <span>Warm craft service demo · No checkout · No payment</span>
+      <a class="route-link" href="#admin">Admin Demo</a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
